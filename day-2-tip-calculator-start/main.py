@@ -27,6 +27,6 @@ total_tip = bill * percent_tip
 total_bill = total_tip + bill
 
 # Split between number of people
-bill_per_person = round(total_bill / num_people, 2)
+bill_per_person = "{:.2f}".format((total_bill / num_people))
 
 print(f"Each person should pay: ${bill_per_person}")
