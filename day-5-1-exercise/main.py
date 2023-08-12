@@ -16,5 +16,3 @@ for height in student_heights:
   count += 1
 
 print(round(student_heights_sum / count))
-
-
