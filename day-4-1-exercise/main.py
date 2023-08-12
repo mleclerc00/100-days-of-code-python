@@ -6,4 +6,3 @@ if coin_flip == 0:
     print("Tails")
 else:
     print("Heads")
-

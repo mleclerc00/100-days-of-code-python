@@ -9,8 +9,8 @@ for number in range (1,101):
         print(number)
     else:
         print(f"{fizz}{buzz}")
-    
-        
+
+
 for number in range (1,101):
     if number % 3 == 0 and number % 5 == 0:
         print("FizzBuzz")
