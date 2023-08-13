@@ -3,7 +3,7 @@
 # def turn_right():
 #     for _ in range(3):
 #         turn_left()
- 
+
 # def turn_down():
 #     turn_right()
 #     move()
