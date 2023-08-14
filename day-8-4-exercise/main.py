@@ -14,8 +14,8 @@ def encrypt(plain_text, shift_amount):
 
 #TODO-1: Create a different function called 'decrypt' that takes the 'text' and 'shift' as inputs.
 
-  #TODO-2: Inside the 'decrypt' function, shift each letter of the 'text' *backwards* in the alphabet by the shift amount and print the decrypted text.  
-  #e.g. 
+  #TODO-2: Inside the 'decrypt' function, shift each letter of the 'text' *backwards* in the alphabet by the shift amount and print the decrypted text.
+  #e.g.
   #cipher_text = "mjqqt"
   #shift = 5
   #plain_text = "hello"
