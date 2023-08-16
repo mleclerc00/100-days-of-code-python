@@ -1,7 +1,9 @@
 # Higher lower game
 # Given 2 items from the data list, user must pick which has more followers
 # For each correct guess, user receives a point
+# Option b becomes option a if the answer is correct
 # Game ends when the user chooses the item with less followers
+# http://www.higherlowergame.com/
 
 from art import logo, vs
 from game_data import data
