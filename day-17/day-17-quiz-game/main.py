@@ -5,7 +5,7 @@ from quiz_brain import QuizBrain
 from urllib import request
 
 with request.urlopen("https://opentdb.com/api.php?amount=10&type=boolean") as url:
-    question_data = unescape(load(url))
+    question_data = load(url)
 
 question_bank: list[Question] = []
 for question in question_data["results"]:
