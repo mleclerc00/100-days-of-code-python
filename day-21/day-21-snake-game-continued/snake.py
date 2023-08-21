@@ -1,5 +1,6 @@
 from turtle import Turtle
 
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 X_POSITION_START = 0
 Y_POSITION_START = 0
@@ -13,24 +14,26 @@ class Snake:
     def __init__(self):
         """Create a snake from the Turtle class"""
         self.segments: list[Turtle] = []
-        self.shape = "square"
-        self.color = "white"
-        self.length = 3
         self.create()
-        self.head = self.segments[0]
+        self.head: Turtle = self.segments[0]
 
     def create(self):
         """Generates multiple turtles in order to mimic a snake.  
             This also sets the starting position of each turtle and 
             adds each 'segment' of the snake to an array. 
         """
-        for index in range(self.length):
-            x_pos_segment_offset = -(index * 20)
-            segment = Turtle(shape=self.shape)
-            segment.penup()
-            segment.color(self.color)
-            segment.setposition((X_POSITION_START + x_pos_segment_offset), Y_POSITION_START)
-            self.segments.append(segment)
+        for position in STARTING_POSITIONS:
+            self.add_segment(position)
+
+    def add_segment(self, position: tuple[float, float]):
+        segment = Turtle("square")
+        segment.color("white")
+        segment.penup()
+        segment.goto(position)
+        self.segments.append(segment)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
 
     def move(self):
         """Iterates through each segment in the array to set a new position 
