@@ -26,6 +26,7 @@ class Snake:
             self.add_segment(position)
 
     def add_segment(self, position: tuple[float, float]):
+        """Adds a segment to the snake"""
         segment = Turtle("square")
         segment.color("white")
         segment.penup()
@@ -33,6 +34,7 @@ class Snake:
         self.segments.append(segment)
 
     def extend(self):
+        """Extend the snake when a food is eaten"""
         self.add_segment(self.segments[-1].position())
 
     def move(self):
