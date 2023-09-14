@@ -6,7 +6,7 @@ import tkinter.messagebox as messagebox
 
 import pyperclip as pc
 
-# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+# ---------------------------- GENERATE PASSWORD ------------------------------- #
 
 
 def generate_password():
@@ -88,7 +88,7 @@ def save():
         popup()
 
 
-# ---------------------------- User Feedback ------------------------------- #
+# ---------------------------- PASSWORD SAVED FEEDBACK ------------------------------- #
 
 
 def popup():
