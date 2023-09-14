@@ -48,14 +48,14 @@ def find_password():
     """Find the password for a given website"""
     website = website_entry.get().upper()
     data = read_password_file()
-    try:
+    if website in data:
         email = data[website]["email"]
         password = data[website]["password"]
         messagebox.showinfo(
             title=website, message=f"Email: {email}\nPassword: {password} \n\nPassword copied to clipboard."
         )
         pc.copy(password)
-    except KeyError:
+    else:
         messagebox.showwarning(title="Warning", message=f"No details for {website} exists.")
 
 
