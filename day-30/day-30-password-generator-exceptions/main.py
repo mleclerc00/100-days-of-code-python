@@ -51,7 +51,9 @@ def find_password():
     try:
         email = data[website]["email"]
         password = data[website]["password"]
-        messagebox.showinfo(title=website, message=f"Email: {email}\nPassword: {password}")
+        messagebox.showinfo(
+            title=website, message=f"Email: {email}\nPassword: {password} \n\nPassword copied to clipboard."
+        )
         pc.copy(password)
     except KeyError:
         messagebox.showwarning(title="Warning", message=f"No details for {website} exists.")
