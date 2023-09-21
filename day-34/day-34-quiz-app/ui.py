@@ -98,4 +98,5 @@ class QuizInterface:
         Returns:
             str: The user's answer
         """
-        return self.window.wait_variable(self.answer)
+        answer = self.window.wait_variable(self.answer)
+        return answer if answer is not None else ""
