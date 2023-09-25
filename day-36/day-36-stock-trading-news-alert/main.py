@@ -23,22 +23,23 @@ MY_PHONE_NUMBER = environ["MY_PHONE_NUMBER"]
 tesla_stock = StockAPI(STOCK_API_KEY, STOCK_API_URL, STOCK)
 tesla_percentage_change = tesla_stock.calculate_percentage_change()
 
-# Get the top three articles for the news query. Includes title, description, and url.
-tesla_news = NewsAPI(NEWS_API_KEY, NEWS_API_URL, STOCK)
-tesla_articles = tesla_news.get_top_three_articles()
-
 # determine if the percentage change is positive or negative
 if tesla_percentage_change > 0:
     emoji = "🔺"
 else:
     emoji = "🔻"
 
-# message body
-newlines = "\n\n"
-message_body = f"{STOCK}: {emoji}{tesla_percentage_change}% \n\n{newlines.join(tesla_articles)}"
-
 # if the percentage change is greater than 5%, send a text message
 if abs(tesla_percentage_change) > 5:
+    # Get the top three articles for the news query. Includes title, description, and url.
+    tesla_news = NewsAPI(NEWS_API_KEY, NEWS_API_URL, STOCK)
+    tesla_articles = tesla_news.get_top_three_articles()
+
+    # define message body
+    newlines = "\n\n"
+    message_body = f"{STOCK}: {emoji}{tesla_percentage_change}% \n\n{newlines.join(tesla_articles)}"
+
+    # Send a text message with the percentage change and the top three articles for the news query.
     account_sid = TWILIO_ACCOUNT_SID
     auth_token = TWILIO_AUTH_TOKEN
     client = Client(account_sid, auth_token)
