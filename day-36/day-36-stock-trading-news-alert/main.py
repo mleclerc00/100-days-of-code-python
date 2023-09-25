@@ -37,7 +37,7 @@ if abs(tesla_percentage_change) > 5:
 
     # define message body
     newlines = "\n\n"
-    message_body = f"{STOCK}: {emoji}{tesla_percentage_change}% \n\n{newlines.join(tesla_articles)}"
+    message_body = f"{STOCK}: {emoji}{abs(tesla_percentage_change)}% \n\n{newlines.join(tesla_articles)}"
 
     # Send a text message with the percentage change and the top three articles for the news query.
     account_sid = TWILIO_ACCOUNT_SID
