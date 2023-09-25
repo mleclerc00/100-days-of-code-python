@@ -30,7 +30,7 @@ else:
     emoji = "🔻"
 
 # if the percentage change is greater than 5%, send a text message
-if abs(tesla_percentage_change) > 4:
+if abs(tesla_percentage_change) > 5:
     # Get the top three articles for the news query. Includes title, description, and url.
     tesla_news = NewsAPI(NEWS_API_KEY, NEWS_API_URL, COMPANY_NAME)
     tesla_articles = tesla_news.get_top_three_articles()
