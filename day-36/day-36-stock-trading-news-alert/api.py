@@ -36,7 +36,7 @@ class NewsAPI(API):
             dict[str, Any]: The news data for the news query.
         """
         params = {
-            "q": self.news_query,
+            "qInTitle": self.news_query,
             "apiKey": self.api_key,
         }
         return self.get_data(params)
